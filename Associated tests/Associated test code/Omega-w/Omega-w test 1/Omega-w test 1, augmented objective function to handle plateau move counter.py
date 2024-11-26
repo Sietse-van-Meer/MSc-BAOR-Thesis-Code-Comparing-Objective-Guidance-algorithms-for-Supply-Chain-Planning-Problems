@@ -1,6 +1,5 @@
 from numba import njit
 import numpy as np
-import random
 import time
 
 
@@ -37,12 +36,6 @@ def is_within_constraints(job, new_start):
     return lower_bound <= job_end <= upper_bound
 
 @njit(cache=True)
-def calculate_overload_penalty(load_at_time, c_t, nu):
-    overload = np.maximum(0, load_at_time - c_t)
-    overload_penalty = nu * np.sum(overload ** 2)
-    return overload_penalty
-
-@njit(cache=True)
 def evaluate_move(load_at_time, job, new_start, old_start, c_t, total_tardiness, nu, phase):
     duration = job['processing_time']
     weight = job['weight']
@@ -77,10 +70,10 @@ def evaluate_move(load_at_time, job, new_start, old_start, c_t, total_tardiness,
 @njit(cache=True)
 def calculate_augmented_objective_value(load_at_time, total_tardiness, c_t, nu):
     overload = np.maximum(0, load_at_time - c_t)
-    overload_penalty = nu * np.sum(overload ** 2)
     total_overload = np.sum(overload)
     original_objective_value = calculate_objective_value(total_overload, total_tardiness)
-    return original_objective_value + overload_penalty
+    load_penalty = nu * np.sum(load_at_time ** 2)
+    return original_objective_value +  load_penalty
 
 @njit(cache=True)
 def evaluate_move(load_at_time, job, new_start, old_start, c_t, total_tardiness, nu, phase):
