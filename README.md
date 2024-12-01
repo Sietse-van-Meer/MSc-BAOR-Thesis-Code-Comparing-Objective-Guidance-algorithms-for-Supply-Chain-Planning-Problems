@@ -45,10 +45,11 @@ This repository contains all the input data and code required to reproduce the r
 To reproduce results for any experiment, follow these steps:
 1. **Load Data**: Import `j, p_j, w_j, d_j, x_j, l_j, u_j` from the dataset sheet corresponding to the experiment.
 2. **Neighborhood Check**: Verify the neighborhood range settings (e.g., `(-20, 21)`).
-3. **Plateau Moves**:
-   - **Local Search (LS)** and **Simulated Annealing (SA)**: Plateau moves do not require special handling.
+3. **Set Parameters**: Set relevant parameters for the method, see also Algorithm-Specific Notes for more information.
+4. **Plateau Moves**: For most algorithms, one can specify the plateau moves threshold in the main() function. Exceptions are:
+   - **Random First Improvement Local Search (RFILS)** and **Simulated Annealing (SA)**: Plateau moves do not have to be specified.
    - **Tabu Search (TS)**: Plateau moves are handled within the function, not in the main script.
-4. **Set Maximum Iterations**: Define the maximum number of iterations for the algorithm in the main script.
+6. **Set Maximum Iterations**: Define the maximum number of iterations for the algorithm in the main script.
 
 ---
 
@@ -74,7 +75,7 @@ To generate the graphs shown in the thesis:
 - **Purpose**: Calculates the total overload across all time periods.
 
 ### `calculate_objective_value()`
-- **Purpose**: Calculates the objective function. Default values for `alpha` and `beta` are `10` and `1`.
+- **Purpose**: Calculates the objective function. Default values for **α** and **β** are `10` and `1`.
 
 ### `is_within_constraints()`
 - **Purpose**: Ensures the job's finishing time stays within bounds (`d_j - l_j` to `d_j + u_j`).
@@ -96,14 +97,14 @@ To generate the graphs shown in the thesis:
 ### Omega-w
 - **Settings**:
   - Define shifts (neighborhood) in `simplified_random_local_search`.
-  - Set `nu`, sequence, max plateau moves, and `max_iterations` in `main()`.
+  - Set **ν**, sequence, max plateau moves, and `max_iterations` in `main()`.
   - **Phases**: `normal` for omega phase, `w` for augmented phases.
   - Phases orchestrated via `local_search_phase_sequence`.
 
 ### GLS-Q
 - **Settings**:
   - Define shifts (neighborhood) and reset penalties when `np.sum(penalties) >= 4` in `simplified_random_local_search`.
-  - Set `nu` (lambda), plateau move limit, and `max_iterations` in `main()`.
+  - Set **ν** (= **λ**, inherited from omega-w), plateau move limit, and `max_iterations` in `main()`.
   - Uses `calculate_quarterly_load` to compute aggregated quarterly loads for penalization.
 
 ### Tabu Search (TS)
@@ -125,12 +126,12 @@ To generate the graphs shown in the thesis:
 ### $\omega-w$ + SA
 - **Settings**:
   - Define shifts (neighborhood) in both `simplified_random_local_search` and `simulated_annealing`.
-  - Set initial temperature, cooling rate, `nu`, sequence, and max plateau moves in `main()`.
+  - Set initial temperature, cooling rate, **ν**, sequence, and max plateau moves in `main()`.
   - Orchestrated via `local_search_phase_sequence`.
 
 ### ILP
 - **Settings**:
-  - Set `alpha` and `beta` to reflect the balance between tardiness and overload.
+  - Set **α** and **β** to reflect the balance between tardiness and overload.
   - Interestingly, the ILP function flags infeasible problem instances. So trying your new instance on the ILP helps checking feasibility.
 
 ---
