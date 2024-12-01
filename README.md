@@ -131,7 +131,7 @@ To generate the graphs shown in the thesis:
 ### ILP
 - **Settings**:
   - Set `alpha` and `beta` to reflect the balance between tardiness and overload.
-  - **Warning**: The ILP function flags infeasible problem instances.
+  - Interestingly, the ILP function flags infeasible problem instances. So trying your new instance on the ILP helps checking feasibility.
 
 ---
 
