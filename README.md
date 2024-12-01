@@ -117,7 +117,7 @@ To generate the graphs shown in the thesis:
   - Set initial temperature, cooling rate, and `max_iterations` in `main()`.
   - Cooling rule defined via `get_cooling_rate`.
 
-### LS+SA
+### LS + SA
 - **Settings**:
   - Define shifts (neighborhood) in `hybrid_local_search_simulated_annealing`.
   - Set initial temperature, cooling rate, max plateau moves, and `max_iterations` in `main()`.
