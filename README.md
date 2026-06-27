@@ -6,24 +6,24 @@ The thesis studies the **1-Dimensional Planning Problem (1DPP)**, a single-machi
 
 ## Repository structure
 
-- **Assessment criteria 1 and 2/**  
+- **Assessment criteria 1 and 2**  
   Code for experiments on:
   1) mean objective function value  
   2) mean standard deviation of the objective function value
   Also includes the exact solver ILP code (Gurobi).
 
-- **Assessment criteria 4/**  
+- **Assessment criteria 4**  
   Code for experiments on mean algorithm complexity.
 
-- **Data Generation Process and dataset files/**  
+- **Data Generation Process and dataset files**  
   Dataset generation scripts and the dataset files used in the experiments. You can copy paste the jobs set in other parts of the code to run the code for that dataset. 
 
-- **Parameter configuration and graphs/**
-  - **Graphs parameter configuration results/**  
+- **Parameter configuration and graphs**
+  - **Graphs parameter configuration results**  
     This is the code to visualize the parameter configuration results.
-  - **Graphs results criterion 1/**  
+  - **Graphs results criterion 1**  
     This is the code to visualize the results of assessment criterion 1, mean objective value.
-  - **Parameter configuration code/**
+  - **Parameter configuration code**
     This is the code used for configuration of the algorithm parameters.    
 
 
