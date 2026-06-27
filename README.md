@@ -16,15 +16,15 @@ The thesis studies the **1-Dimensional Planning Problem (1DPP)**, a single-machi
   Code for experiments on mean algorithm complexity.
 
 - **Data Generation Process and dataset files**  
-  Dataset generation scripts and the dataset files used in the experiments. You can copy paste the jobs set in other parts of the code to run the code for that dataset. 
-
+  Dataset generation scripts and the dataset files used in the experiments. You can copy paste the jobs set in other parts of the code to run the code for that dataset.
+  
 - **Parameter configuration and graphs**
   - **Graphs parameter configuration results**  
     This is the code to visualize the parameter configuration results.
   - **Graphs results criterion 1**  
     This is the code to visualize the results of assessment criterion 1, mean objective value.
-  - **Parameter configuration code**
-    This is the code used for configuration of the algorithm parameters.    
+  - **Parameter configuration code**  
+    This is the code used for configuration of the algorithm parameters.
 
 
 
@@ -62,3 +62,4 @@ If you have a `requirements.txt`, install with all Python packages with:
 
 ```bash
 pip install -r requirements.txt
+```
