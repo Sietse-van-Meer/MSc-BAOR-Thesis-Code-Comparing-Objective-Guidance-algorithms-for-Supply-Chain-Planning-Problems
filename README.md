@@ -21,13 +21,13 @@ The thesis studies the **1-Dimensional Planning Problem (1DPP)**, a single-machi
 - **Parameter configuration and graphs**
 
   - **Graphs parameter configuration results**
-    This is the code to visualize the parameter configuration results.
+        This is the code to visualize the parameter configuration results.
 
   - **Graphs results criterion 1**
-    This is the code to visualize the results of assessment criterion 1, mean objective value.
+        This is the code to visualize the results of assessment criterion 1, mean objective value.
 
   - **Parameter configuration code**
-    This is the code used for configuration of the algorithm parameters.
+        This is the code used for configuration of the algorithm parameters.
 
 
 
