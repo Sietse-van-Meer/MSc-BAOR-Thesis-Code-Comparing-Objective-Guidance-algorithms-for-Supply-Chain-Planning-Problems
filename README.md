@@ -19,15 +19,12 @@ The thesis studies the **1-Dimensional Planning Problem (1DPP)**, a single-machi
   Dataset generation scripts and the dataset files used in the experiments. You can copy paste the jobs set in other parts of the code to run the code for that dataset.
   
 - **Parameter configuration and graphs**
-
-  - **Graphs parameter configuration results**
-        This is the code to visualize the parameter configuration results.
-
-  - **Graphs results criterion 1**
-        This is the code to visualize the results of assessment criterion 1, mean objective value.
-
-  - **Parameter configuration code**
-        This is the code used for configuration of the algorithm parameters.
+  - **Graphs parameter configuration results**<br>
+    This is the code to visualize the parameter configuration results.
+  - **Graphs results criterion 1**<br>
+    This is the code to visualize the results of assessment criterion 1, mean objective value.
+  - **Parameter configuration code**<br>
+    This is the code used for configuration of the algorithm parameters.
 
 
 
